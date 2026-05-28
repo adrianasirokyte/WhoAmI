@@ -4,6 +4,8 @@ public class QuestManager : MonoBehaviour {
     public static QuestManager Instance;
 
     public bool talkedToJohn = false;
+    public bool printerDefeated = false;
+    public bool johnAskedForCoffee = false;
 
     private void Awake() {
         if (Instance != null && Instance != this) {
@@ -21,6 +23,16 @@ public class QuestManager : MonoBehaviour {
     }
 
     public bool CanUsePrinter() {
-        return talkedToJohn;
+        return talkedToJohn && !printerDefeated;
+    }
+
+    public void PrinterDefeated() {
+        printerDefeated = true;
+        Debug.Log("Quest updated: printer defeated = true");
+    }
+
+    public void JohnAskedForCoffee() {
+        johnAskedForCoffee = true;
+        Debug.Log("Quest updated: John wants coffee");
     }
 }

@@ -2012,6 +2012,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7329490288198629178, guid: 09786b2145094304f8e76c50e272040f, type: 3}
   m_PrefabInstance: {fileID: 548361288}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &568326185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568326186}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568326186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568326185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 991, z: -689}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1373477577}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &586154361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4540,6 +4571,7 @@ GameObject:
   - component: {fileID: 1373477578}
   - component: {fileID: 1373477580}
   - component: {fileID: 1373477581}
+  - component: {fileID: 1373477582}
   m_Layer: 0
   m_Name: printer
   m_TagString: Untagged
@@ -4559,7 +4591,8 @@ Transform:
   m_LocalPosition: {x: 4.78, y: 0, z: -11.14}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 568326186}
   m_Father: {fileID: 853493862}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &1373477578
@@ -4629,8 +4662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  leftLimit: -3
-  rightLimit: 3
+  minX: -3
+  maxX: 3
 --- !u!65 &1373477581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4652,6 +4685,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1018.16907, y: 1636.161, z: 1673.1644}
   m_Center: {x: 59.378975, y: 820.2233, z: -5.7117634}
+--- !u!114 &1373477582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373477576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9551238a3aa79a48ba27edf9ca43f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paperPrefab: {fileID: 5086312148478859265, guid: 8d1fc8f873236c04db48e1ffb3c39d9b, type: 3}
+  shootPoint: {fileID: 568326186}
+  shootInterval: 1.5
+  shootDirection: {x: -1, y: 0, z: 0}
 --- !u!1001 &1377007538
 PrefabInstance:
   m_ObjectHideFlags: 0

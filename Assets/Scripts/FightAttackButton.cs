@@ -33,6 +33,10 @@ public class FightAttackButton : MonoBehaviour {
         if (printerHealth != null && printerHealth.currentHealth <= 0) {
             fightEnded = true;
 
+            if (QuestManager.Instance != null) {
+                QuestManager.Instance.PrinterDefeated();
+            }
+
             if (winPanel != null)
                 winPanel.SetActive(true);
 
