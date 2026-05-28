@@ -57,6 +57,24 @@ public class AttackJoystick : MonoBehaviour {
             return;
         }
 
+        // KITCHEN
+        if (KitchenTrigger.CanEnterKitchen &&
+            !string.IsNullOrEmpty(KitchenTrigger.SceneToEnterKitchen)) {
+            string sceneName = KitchenTrigger.SceneToEnterKitchen;
+
+            KitchenTrigger.CanEnterKitchen = false;
+            KitchenTrigger.SceneToEnterKitchen = "";
+
+            SceneManager.LoadScene(sceneName);
+            return;
+        }
+
+        // KITCHEN COFFEE MINI GAME
+        if (KitchenMiniGameTrigger.ActiveKitchen != null) {
+            KitchenMiniGameTrigger.ActiveKitchen.OpenCoffeePanel();
+            return;
+        }
+
         if (player != null) {
             Debug.Log("ATTACK CLICKED");
             player.DoAttack();

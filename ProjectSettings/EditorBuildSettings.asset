@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PrinterFight.unity
     guid: 2555549e33a22fd449c259dc22b41121
+  - enabled: 1
+    path: Assets/KitchenScene.unity
+    guid: a80e0ba1e27efb44ba2c941f91ef7457
   m_configObjects: {}
